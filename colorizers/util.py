@@ -2,12 +2,13 @@
 from PIL import Image
 import numpy as np
 from skimage import color
+
 import torch
 import torch.nn.functional as F
 from IPython import embed
 
 def load_img(img_path):
-	out_np = np.asarray(Image.open(img_path))
+	out_np = np.asarray(Image.open(img_path).convert('RGB'))
 	if(out_np.ndim==2):
 		out_np = np.tile(out_np[:,:,None],3)
 	return out_np
@@ -18,7 +19,7 @@ def resize_img(img, HW=(256,256), resample=3):
 def preprocess_img(img_rgb_orig, HW=(256,256), resample=3):
 	# return original size L and resized L as torch Tensors
 	img_rgb_rs = resize_img(img_rgb_orig, HW=HW, resample=resample)
-	
+
 	img_lab_orig = color.rgb2lab(img_rgb_orig)
 	img_lab_rs = color.rgb2lab(img_rgb_rs)
 

@@ -1,0 +1,8 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\Users\sjsha\Documents\01_School\GeorgiaTech\CS 7643 - Deep Learning\GroupProject\colorization\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
